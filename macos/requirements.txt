@@ -1,0 +1,6 @@
+rumps
+pyperclip
+requests
+python-dotenv
+py2app
+setuptools==70.3.0
