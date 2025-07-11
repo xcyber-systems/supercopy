@@ -22,6 +22,18 @@ SuperCopy is a smart, context-aware clipboard assistant designed for both macOS 
 4.  **Dynamic Menu**: Click the SuperCopy icon to see a dynamic list of actions based on the analyzed text.
 5.  **Paste**: Select an action, and the transformed text (e.g., a summary) is instantly copied to your clipboard, ready to be pasted.
 
+## Demo
+
+Here is SuperCopy in action.
+
+**1. Copying text from a source (e.g., GitHub):**
+
+![SuperCopy in action on GitHub](./demo1.png)
+
+**2. Pasting the organized result into a text editor:**
+
+![SuperCopy pasting organized text](./demo2.png)
+
 ## Installation
 
 For the easiest setup, download the pre-built application for your operating system from the **Releases** page of this repository.
