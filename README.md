@@ -92,8 +92,14 @@ When you first run the application locally, it will prompt you to enter your Gem
 
 We are continuously working to improve SuperCopy. Here are some features on our roadmap:
 
+-   **Predicted 'Actions'**: In addition to predicted 'paste values', the app will suggest actions to take based on the copied text, such as creating a calendar event or sending an email.
+-   **Improved Secrets Detection**: Enhance the secrets detection mechanism to more accurately identify and protect sensitive information.
 -   **Support for Local LLMs**: Run analysis entirely on-device for enhanced privacy and offline capability.
 -   **Multi-Provider Support**: Add support for other AI providers.
+
+## Contributions
+
+Contributions are welcome! If you have ideas for new features, bug fixes, or improvements, please feel free to open an issue or submit a pull request.
 
 ## License
 
