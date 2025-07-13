@@ -29,6 +29,7 @@ jobs:
     - name: Build the application
       working-directory: ./macos
       run: |
+        source ../venv/bin/activate
         python3 setup.py py2app
 
     - name: Zip the application

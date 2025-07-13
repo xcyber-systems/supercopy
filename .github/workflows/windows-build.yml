@@ -32,9 +32,6 @@ jobs:
         venv\Scripts\activate
         pyinstaller windows/supercopy.spec --distpath windows/dist
 
-    - name: Zip the application
-      run: powershell -command "Compress-Archive -Path windows/dist/SuperCopy -DestinationPath windows/dist/SuperCopy-Windows.zip"
-
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -52,6 +49,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: windows/dist/SuperCopy-Windows.zip
-        asset_name: SuperCopy-Windows.zip
-        asset_content_type: application/zip
+        asset_path: windows/dist/SuperCopy.exe
+        asset_name: SuperCopy-Windows.exe
+        asset_content_type: application/octet-stream
