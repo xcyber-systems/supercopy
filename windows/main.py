@@ -59,16 +59,34 @@ def save_config():
         print(f"Error saving config: {e}")
 
 # --- Icon Creation ---
-def create_image(width, height, color1, color2):
-    image = Image.new('RGB', (width, height), color1)
-    dc = ImageDraw.Draw(image)
-    dc.rectangle((width // 2, 0, width, height // 2), fill=color2)
-    dc.rectangle((0, height // 2, width // 2, height), fill=color2)
+def load_ico_icon(icon_path="icon.ico"):
+    """Load icon from ICO file"""
+    try:
+        return Image.open(icon_path)
+    except Exception as e:
+        print(f"Error loading icon: {e}")
+        # Fallback to a simple colored icon
+        return create_fallback_icon()
+
+def create_fallback_icon(color='black'):
+    """Create a simple fallback icon"""
+    image = Image.new('RGB', (64, 64), color)
+    draw = ImageDraw.Draw(image)
+    # Draw a simple clipboard-like shape
+    draw.rectangle([10, 5, 54, 59], fill='white', outline='black', width=2)
+    draw.rectangle([15, 10, 49, 25], fill='lightgray')
     return image
 
-default_icon = create_image(64, 64, 'black', 'white')
-processing_icon = create_image(64, 64, 'blue', 'white')
-paused_icon = create_image(64, 64, 'gray', 'white')
+# Load icons from ICO file
+try:
+    default_icon = load_ico_icon("icon.ico")
+    processing_icon = load_ico_icon("icon.ico")  # Same icon for now
+    paused_icon = load_ico_icon("icon.ico")      # Same icon for now
+except:
+    # Fallback to simple icons if ICO loading fails
+    default_icon = create_fallback_icon('black')
+    processing_icon = create_fallback_icon('blue')
+    paused_icon = create_fallback_icon('gray')
 
 # --- Settings Dialog ---
 def show_settings_dialog():
