@@ -2,4 +2,4 @@ pyperclip
 pystray
 Pillow
 requests
-python-dotenv
+python-dotenv>=1.0.0
